@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+    <!-- MAIN -->
+    {% block main %}
+
+        {% from '_macro.html' import formularioLogin %}
+
+        <form action="/login" method="POST">
+            <!-- CSRF -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+
+            {{ formularioLogin(form.username) }}
+            {{ formularioLogin(form.password) }}
+            <button type="submit">Login</button>
+        </form>
+
+    {% endblock %}

@@ -1,0 +1,12 @@
+<!-- MACRO: formulario de login -->
+{% macro formularioLogin(campo) %}
+    {{ campo.label }}
+    {{ campo(**kwargs) | safe }}
+    <br>
+
+    {% if campo.errors %}
+        {% for error in campo.errors %}
+        <h6>{{ error }}</h6>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
